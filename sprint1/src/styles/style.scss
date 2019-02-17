@@ -1,4 +1,12 @@
 @import './variable.scss';
+@import './fontstyle.scss';
+
+@mixin settingBox {
+  background-color: black;
+  opacity: 0.5;
+  border-radius: 4px;
+  display: flex;
+}
 
 body {
   margin: 0;
@@ -6,14 +14,24 @@ body {
 
 nav {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+  flex-direction: column;
   margin: 0 16px;
+
+  @media (min-width: $tablet){
+    flex-direction: row;
+    align-items: center;
+    height: 80px;
+    margin: 0 24px;
+  }
+  @media (min-width: $desktop){
+    margin: 0 0 0 36px;
+    height: 100px;
+  }
 
   .logo{
     height: 48px;
     display: flex;
-    align-content: center;
+    justify-content: center;
   }
   
   .search{
@@ -27,83 +45,301 @@ nav {
     padding-left: 45px;
     background-color: $alabaster;
     border: solid 1px $mercury;
+
+    @media (min-width: $tablet){
+      flex-grow: 1;
+      margin: 0 24px 0 169px;
+    }
+    @media (min-width: $desktop){
+      flex-grow: 1;
+      margin-left: 35.35vw;
+    }
   }
 
-  button{
-    margin: 8px 16px 16px 0;
-    width: 224px;
-    height: 48px;
-    border-radius: 4px;
-    background-image: url("../assets/Icons/SVG/Icon-upload.svg");
-    background-repeat: no-repeat;
-    background-position: 60px;
-    color: $white;
-    border: solid 1px $brainflix-blue;
-    background-color: $brainflix-blue;
-  }
-
-  .profilePic{
+  .upload{
     margin: 8px 0 16px 0;
-    width: 48px;
-    height: 48px;
-    border-radius: 50%;
-    object-fit: cover;
-  }
-}
+    display: flex;
+    align-content: center;
 
-video{
-  width: 100%; 
-  height: 183px;
-  object-fit: cover;
-}
+    @media (min-width: $tablet){
+      margin: 0;
+    }
+    @media (min-width: $desktop){
+      margin-right: 12.5vw;
+    }
 
-.content{
-  margin: 0;
-
-  .description{
-    margin: 32px 16px 40px 16px;
+    button{
+      margin-right: 16px;
+      flex-grow: 1;
+      height: 48px;
+      border-radius: 4px;
+      color: $white;
+      border: solid 1px $brainflix-blue;
+      background-color: $brainflix-blue;
   
-    &__info{
-      display: flex;
+      @media (min-width: $tablet){
+        margin: 0 24px 0 0;
+        width: 112px;
+      }
   
-      &--date{
-        color: $silver;
+      img{
+        height: 13px;
       }
     }
   
-    &__viewsLikes{
-      display: flex;
-      flex-direction: row;
-    }
-  
-    p{
-      padding-top: 24px;
-      margin: 0;
-      border-top: 1px solid $silver;
+    .profilePic{
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      object-fit: cover;
     }
   }
 }
 
-.videoList {
-  margin: 40px 16px 16px 16px;
+.main{
+  position: relative;
 
-  h4{
-    margin-bottom: 40px;
+  video{
+    height: 57.19vw;
+    width: 100%;
+    object-fit: cover;
+    box-sizing: border-box;
+  
+    @media (min-width: $tablet){
+      padding: 0 4.43vw;
+      background-color: black;
+      height: 52.08vw;
+    }
+    @media (min-width: $desktop){
+      padding: 0 17.22vw;
+      height: 37.5vw;
+    }
   }
-
-  &__next {
+  
+  .controls{
     display: flex;
-    margin-top: 24px;
+    position: absolute;
+    bottom: 16px;
+    width: 100%;
+    padding: 0 16px;
+    box-sizing: border-box;
+    justify-content: space-between;
 
-    &--img {
-      width: 120px;
-      height: 70px;
-      object-fit: cover;
-      margin-right: 16px;
+    @media (min-width: $tablet){
+      padding: 0 6vw;
     }
-    &--content {
-      display: flex;
-      flex-direction: column;
+    @media (min-width: $desktop){
+      padding: 0 18.5vw;
+    }
+
+    &__play{
+      @include settingBox();
+      width: 45px;
+      height: 35px;    
+      justify-content: center;
+    }
+    &__time{
+      flex-grow: 1;
+      position: relative;
+
+      &--box {
+        @include settingBox();
+        margin: 0 8px;
+        height: 35px;
+        align-items: center;
+
+        @media (min-width: $tablet){
+          margin: 0 16px;
+        }
+      }
+     
+      &--line{
+        position: absolute;
+        background-color: black;
+        height: 5px;
+        width: 78%;
+        box-sizing: border-box;
+        border-radius: 4px;
+        padding: 0 16px;
+        margin-left: 10.71%;
+        bottom: 15px;
+
+        @media (min-width: $tablet){
+          width: 90%;
+          margin-left: 5%;
+        }
+      }
+    }
+    
+    &__settings{
+      @include settingBox();
+      width: 50px;
+      height: 35px;
+      justify-content: space-between;
+      padding: 0 16px;
+    }
+  } 
+}
+
+.content{
+  display: flex;
+  flex-direction: column;
+
+  @media (min-width: $desktop){
+    flex-direction: row;
+    margin: 40px 180px;
+  }
+
+  .detail{
+    margin: 0;
+
+    @media (min-width: $desktop){
+      width: 49.44vw;
+    }
+
+    .description{
+      margin: 32px 16px 40px 16px;
+
+      @media (min-width: $tablet){
+        margin: 48px 24px 64px 24px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+      }
+      @media (min-width: $desktop){
+        margin: 0 0 70px 0;
+      }
+
+      &__title{
+        margin: 0;
+        width: 100%;
+      }
+
+      &__info{
+        display: flex;
+        align-items: center;
+        margin: 16px 0 32px 0;
+
+        @media (min-width: $tablet){
+          margin: 24px 0;
+        }
+        
+    
+        h2{
+          margin: 0;
+        }
+
+        &--date{
+          color: $silver;
+          margin: 0 0 0 8px;
+        }
+      }
+    
+      &__viewsLikes{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        margin-bottom: 24px;
+
+        @media (min-width: $tablet){
+          margin: 0;
+        }
+
+        div{
+          display: flex;
+          margin-right: 16px;
+
+          @media (min-width: $tablet){
+            margin: 0 0 0 24px;
+          }
+          @media (min-width: $desktop){
+            margin-right: 32px;
+          }
+
+          & > *{
+            margin:0;
+          }
+
+          img{
+            margin-right: 8px;
+          }
+        }
+      }
+    
+      .paragraph{
+        padding-top: 24px;
+        margin: 0;
+        border-top: 1px solid $mercury;
+
+        @media (min-width: $tablet){
+          padding-top: 40px;
+        }
+        @media (min-width: $desktop){
+          padding-right: 180px;
+        }
+      }
     }
   }
+  
+  .videoList {
+    margin: 40px 16px 16px 16px;
+  
+    @media (min-width: $desktop){
+      margin: 0 0 0 24px;
+    }
+
+    .subheader{
+      margin: 0 0 40px 0;
+      color: $silver;
+    }
+  
+    &__next {
+      display: flex;
+      margin-top: 24px;
+  
+      @media (min-width: $tablet){
+        margin-top: 40px;
+      }
+
+      &--img {
+        width: 37.5vw;
+        height: 21.88vw;
+        object-fit: cover;
+        margin-right: 16px;
+        border-radius: 4px;
+
+        @media (min-width: $tablet){
+          width: 15.63vw;
+          height: 9.11vw;
+        }
+        @media (min-width: $desktop){
+          width: 8.33vw;
+          height: 4.86vw;
+        }
+      }
+      &--content {
+        display: flex;
+        flex-direction: column;
+        
+        h3 {
+          margin: 0;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+          width: 47.5vw;
+
+          @media (min-width: $tablet){
+            width: 26vw;
+          }
+          @media (min-width: $desktop){
+            width: 13vw;
+          }
+        }
+        p {
+          margin-bottom: 0;
+        }
+      }
+    }
+  }
+  
 }

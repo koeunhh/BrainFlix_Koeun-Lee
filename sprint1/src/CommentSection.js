@@ -7,15 +7,17 @@ export default class CommentSection extends Component {
 
     return(
       <div className="commentSection">
-        <h3>{comments.length} Comments</h3>
+        <text className='subheader'>{comments.length} Comments</text>
         <form className="form">
           <div className="form__image">
             <img className="form__image--img" src='./assets/Images/Mohan-muruge.jpg' alt='profilePic'/>
           </div>
           <div className="form__input">
-            <h5> Join the Conversation </h5>
-            <textarea className="form__input--comment" name="userComment" placeholder="Add a new comment"></textarea>
-            <button className="button subheader" type="submit"> COMMENT </button>
+            <p> JOIN THE CONVERSATION </p>
+            <div className="form__input--submit">
+              <textarea name="userComment" placeholder="Add a new comment"></textarea>
+              <button className="button subheader" type="submit"> COMMENT </button>
+            </div>
           </div>
         </form>
         <div className="targetArea">

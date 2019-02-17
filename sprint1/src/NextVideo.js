@@ -8,8 +8,8 @@ export default class NextVideo extends Component{
       <div className='videoList__next'>
         <img className='videoList__next--img' src={image} alt='nextVideo'/>
         <div className='videoList__next--content'>
-          <div>{title}</div>
-          <div>{channel}</div>
+          <h3>{title}</h3>
+          <p>{channel}</p>
         </div>
       </div>
     )

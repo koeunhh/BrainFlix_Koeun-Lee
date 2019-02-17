@@ -8,8 +8,10 @@ class Nav extends Component {
           <img src='./assets/Logo/Logo-brainflix.svg' alt="logo"/>
         </div>
         <input className="search" type="text" name="search" placeholder="Search" />
-        <button>UPLOAD</button>
-        <img className="profilePic" src='./assets/Images/Mohan-muruge.jpg' alt="profilePic"/>
+        <div className="upload">
+          <button><img src="../assets/Icons/SVG/Icon-upload.svg"/><span className='subheader'> UPLOAD</span></button>
+          <img className="profilePic" src='./assets/Images/Mohan-muruge.jpg' alt="profilePic"/>
+        </div>
       </nav>
     )
   }

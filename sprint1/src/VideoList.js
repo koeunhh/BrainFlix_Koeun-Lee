@@ -9,7 +9,7 @@ export default class VideoList extends Component{
 
     return(
       <div className='videoList'>
-        <h4>NEXT VIDEO</h4>
+        <text className='subheader'>NEXT VIDEO</text>
         {filteredList.map(each => <NextVideo title={each.title}
                                               channel={each.channel}
                                               image={each.image}/>)}

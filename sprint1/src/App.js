@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import './assets/fonts/stylesheet.css';
 import './styles/style.scss';
 import './styles/comment.scss';
 
@@ -23,11 +24,13 @@ class App extends Component {
         <Nav />
         <Main mainData={this.state.mainData}/>
         <div className='content'>
-          <Description mainData={this.state.mainData}/>
-          <CommentSection mainData={this.state.mainData}/>
+          <div className='detail'>
+            <Description mainData={this.state.mainData}/>
+            <CommentSection mainData={this.state.mainData}/>
+          </div>
+          <VideoList videoListData={this.state.videoListData}
+                     mainData={this.state.mainData}/>
         </div>
-        <VideoList videoListData={this.state.videoListData}
-                   mainData={this.state.mainData}/>
       </div>
     );
   }
