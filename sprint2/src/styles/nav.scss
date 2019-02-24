@@ -1,0 +1,80 @@
+@import './variable.scss';
+@import './fontstyle.scss';
+@import './buttons.scss';
+
+nav {
+  display: flex;
+  flex-direction: column;
+  margin: 0 16px;
+
+  @media (min-width: $tablet){
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    height: 80px;
+    margin: 0 24px;
+  }
+  @media (min-width: $desktop){
+    margin: 0 180px 0 180px;
+    height: 100px;
+  }
+
+  .logo{
+    height: 48px;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .navMain {
+    @media (min-width: $tablet){
+      display: flex;
+    }
+
+    .search{
+      @include commentBox();
+      height: 49px;   
+      background-image: url("../assets/Icons/SVG/Icon-search.svg");
+      background-repeat: no-repeat;
+      background-position: 15px;
+      padding-left: 45px;
+  
+      @media (min-width: $tablet){
+        width: 252px;
+        margin-right: 24px;
+      }
+    }
+  
+    .uploadButton{
+      margin: 8px 0 16px 0;
+      display: flex;
+      align-content: center;
+  
+      @media (min-width: $tablet){
+        margin: 0;
+      }
+  
+      button{
+        margin-right: 16px;
+        @include button();
+        flex-grow: 1;
+        height: 48px;
+    
+        @media (min-width: $tablet){
+          margin: 0 24px 0 0;
+          width: 103px;
+        }
+    
+        img{
+          height: 13px;
+        }
+      }
+    
+      .profilePic{
+        width: 48px;
+        height: 48px;
+        border-radius: 50%;
+        object-fit: cover;
+      }
+    }
+  }
+}

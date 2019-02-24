@@ -1,0 +1,15 @@
+
+@mixin commentBox {
+  background-color: $alabaster;
+  width: 100%;
+  box-sizing: border-box;
+  border-radius: 4px;
+  border: solid 1px $mercury;
+}
+
+@mixin button {
+  background-color: $brainflix-blue;
+  color: $white;
+  border-radius: 4px;
+  border: solid 1px $brainflix-blue;
+}
