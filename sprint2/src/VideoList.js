@@ -6,13 +6,16 @@ export default class VideoList extends Component{
     const {videoListData} = this.props;
     const mainTitle = this.props.mainData.title;
     const filteredList = videoListData.filter(each => (each.title !== mainTitle))
-
+  
     return(
       <div className='videoList'>
         <text className='subheader'>NEXT VIDEO</text>
-        {filteredList.map(each => <NextVideo title={each.title}
-                                              channel={each.channel}
-                                              image={each.image}/>)}
+        {filteredList.map((each, index) => <NextVideo title={each.title}
+                                                      channel={each.channel}
+                                                      image={each.image}
+                                                      id={each.id}
+                                                      key={index}
+                                                      selectVideo={this.props.selectVideo}/>)}
       </div>
     )
   }

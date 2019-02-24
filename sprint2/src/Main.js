@@ -11,15 +11,15 @@ export default class Main extends Component {
         </video>
         <div className='controls'>
           <div className='controls__play'>
-            <img src='./assets/Icons/SVG/Icon-play.svg'/>
+            <img src='/assets/Icons/SVG/Icon-play.svg' alt='icon-play'/>
           </div>
           <div className='controls__time'>
             <div className='controls__time--box'></div>
             <div className='controls__time--line'></div>
           </div>
           <div className='controls__settings'>
-            <img src='./assets/Icons/SVG/Icon-fullscreen.svg'/>
-            <img src='./assets/Icons/SVG/Icon-volume.svg'/>
+            <img src='/assets/Icons/SVG/Icon-fullscreen.svg' alt='icon-fullscreen'/>
+            <img src='/assets/Icons/SVG/Icon-volume.svg' alt='icon-volume'/>
           </div>
         </div>
       </div>

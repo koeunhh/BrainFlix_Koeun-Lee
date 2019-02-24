@@ -11,14 +11,15 @@ export default class Description extends Component{
         <h1 className='description__title'>{mainData.title}</h1>
         <div className='description__info'>
           <h2 className='subheader'>By {mainData.channel}</h2>
-          <p className='description__info--date'>{convertToDate(mainData.timestamp)}</p>        </div>
+          <p className='description__info--date'>{convertToDate(mainData.timestamp)}</p>
+        </div>
         <div className='description__viewsLikes'>
           <div>
-            <img src='./assets/Icons/SVG/Icon-views.svg' alt='views'/>
+            <img src='/assets/Icons/SVG/Icon-views.svg' alt='views'/>
             <p>{mainData.views}</p>
           </div>
           <div>
-            <img src='./assets/Icons/SVG/Icon-likes.svg' alt='likes'/>
+            <img src='/assets/Icons/SVG/Icon-likes.svg' alt='likes'/>
             <p>{mainData.likes}</p>
           </div>
         </div>

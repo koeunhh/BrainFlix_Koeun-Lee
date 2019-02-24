@@ -7,7 +7,7 @@ export default class CommentSection extends Component {
 
     return(
       <div className="commentSection">
-        <text className='subheader'>{comments.length} Comments</text>
+        {/* <text className='subheader'> Comments</text> */}
         <form className="form">
           <div className="form__image">
             <img className="form__image--img" src='./assets/Images/Mohan-muruge.jpg' alt='profilePic'/>
@@ -21,12 +21,18 @@ export default class CommentSection extends Component {
           </div>
         </form>
         <div className="targetArea">
-          {comments.map(each => (
-            <Comment image={each.image}
+          {/* {Object.keys(comments).map((each, index) => (
+            <Comment key={index}
+                     name={comments[each].name}
+                     timestamp={comments[each].timestamp}
+                     comment={comments[each].comment}
+                     />))} */}
+          {comments.map((each, index) => (
+            <Comment key={index}
                      name={each.name}
                      timestamp={each.timestamp}
                      comment={each.comment}
-                     key={each.id}/>))}
+                     />))}
         </div>
       </div>
     )

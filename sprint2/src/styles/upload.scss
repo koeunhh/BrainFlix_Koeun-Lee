@@ -128,10 +128,13 @@
       }
     }
   
-    .cancel{
-      background-color: transparent;
-      border: none;
-      color: $brainflix-blue;
+    a {
+      text-align: center;
+      .cancel{
+        background-color: transparent;
+        border: none;
+        color: $brainflix-blue;
+      }
     }
   }
 }

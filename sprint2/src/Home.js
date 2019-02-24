@@ -1,8 +1,5 @@
 import React, { Component } from 'react';
 
-import videoListData from './videoListData';
-import mainData from './mainData';
-
 import Nav from './Nav';
 import Main from './Main';
 import Description from './Description';
@@ -12,34 +9,62 @@ import VideoList from './VideoList';
 import axios from 'axios';
 
 var url = 'https://project-2-api.herokuapp.com/videos?api_key=koeun-lee';
+var requestedUrl = 'https://project-2-api.herokuapp.com/videos/';
 
 export default class Home extends Component{
   constructor(props){
     super(props);
     this.state = {
       videoListData: [],
-      mainData: mainData
+      mainData: []
     }
   }
 
   componentDidMount(){
     axios.get(url).then(response => {
-      console.log(response.data);
-    })
+      this.setState({
+        videoListData: response.data
+      });
+    });
+
+    const {id} = this.props.match.params;
+
+    axios.get(requestedUrl+id+'?api_key=koeun-lee').then(response => {
+      this.setState({
+        mainData: response.data
+      });
+    });
+  }
+
+  componentDidUpdate(){
+    const {id} = this.props.match.params;
+
+    axios.get(requestedUrl+id+'?api_key=koeun-lee').then(response => {
+      this.setState({
+        mainData: response.data
+      });
+    });
+  }
+
+  selectVideo = (id) => {
+    this.props.history.push(`/videos/${id}`);
   }
 
   render() {
+    const {mainData, videoListData} = this.state;
+
     return (
         <div>
           <Nav />
-          <Main mainData={this.state.mainData}/>
+          <Main mainData={mainData}/>
           <div className='content'>
             <div className='detail'>
-              <Description mainData={this.state.mainData}/>
-              <CommentSection mainData={this.state.mainData}/>
+              <Description mainData={mainData}/>
+              {/* <CommentSection mainData={mainData}/> */}
             </div>
-            <VideoList videoListData={this.state.videoListData}
-                      mainData={this.state.mainData}/>
+            <VideoList videoListData={videoListData}
+                       mainData={mainData}
+                       selectVideo={this.selectVideo}/>
           </div>
         </div>
     );

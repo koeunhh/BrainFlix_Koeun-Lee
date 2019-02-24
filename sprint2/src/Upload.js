@@ -13,7 +13,7 @@ export default class Upload extends Component{
             <div className='form-main'>
               <div className='form-main-img'>
                 <h5 className='thumbnail'>VIDEO THUMBNAIL</h5>
-                <img src='assets/Images/upload-video-preview.jpg' alt='upload-image-preview'/>
+                <img src='assets/Images/upload-video-preview.jpg' alt='upload-preview'/>
               </div>
               <div className='form-main-detail'>
                 <h5 className='title'>TITLE YOUR VIDEO</h5>
