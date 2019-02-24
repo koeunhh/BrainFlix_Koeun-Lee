@@ -4,7 +4,7 @@ import convertToDate from './convertToDate';
 export default class Description extends Component{
   render(){
     const {mainData} = this.props;
-
+    // console.log(mainData.comments);
 
     return(
       <div className='description'>

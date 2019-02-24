@@ -36,14 +36,16 @@ export default class Home extends Component{
     });
   }
 
-  componentDidUpdate(){
-    const {id} = this.props.match.params;
+  componentDidUpdate(previous){
+    if(previous !== this.props){
+      const {id} = this.props.match.params;
 
-    axios.get(requestedUrl+id+'?api_key=koeun-lee').then(response => {
-      this.setState({
-        mainData: response.data
+      axios.get(requestedUrl+id+'?api_key=koeun-lee').then(response => {
+        this.setState({
+          mainData: response.data
+        });
       });
-    });
+    }
   }
 
   selectVideo = (id) => {
@@ -60,7 +62,7 @@ export default class Home extends Component{
           <div className='content'>
             <div className='detail'>
               <Description mainData={mainData}/>
-              {/* <CommentSection mainData={mainData}/> */}
+              <CommentSection mainData={mainData}/>
             </div>
             <VideoList videoListData={videoListData}
                        mainData={mainData}

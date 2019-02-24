@@ -103,7 +103,7 @@ body {
 
   @media (min-width: $desktop){
     flex-direction: row;
-    margin: 40px 180px;
+    margin: 40px 12.5vw;
   }
 
   .detail{
@@ -191,7 +191,7 @@ body {
           padding-top: 40px;
         }
         @media (min-width: $desktop){
-          padding-right: 180px;
+          padding-right: 12.5vw;
         }
       }
     }

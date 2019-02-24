@@ -5,12 +5,16 @@ export default class CommentSection extends Component {
   render() {
     const {comments} = this.props.mainData;
 
+    if(!comments){
+      return null;
+    }
+
     return(
       <div className="commentSection">
-        {/* <text className='subheader'> Comments</text> */}
+        <div className='subheader'> Comments</div>
         <form className="form">
           <div className="form__image">
-            <img className="form__image--img" src='./assets/Images/Mohan-muruge.jpg' alt='profilePic'/>
+            <img className="form__image--img" src='/assets/Images/Mohan-muruge.jpg' alt='profilePic'/>
           </div>
           <div className="form__input">
             <p> JOIN THE CONVERSATION </p>
@@ -21,12 +25,6 @@ export default class CommentSection extends Component {
           </div>
         </form>
         <div className="targetArea">
-          {/* {Object.keys(comments).map((each, index) => (
-            <Comment key={index}
-                     name={comments[each].name}
-                     timestamp={comments[each].timestamp}
-                     comment={comments[each].comment}
-                     />))} */}
           {comments.map((each, index) => (
             <Comment key={index}
                      name={each.name}
