@@ -1,0 +1,158 @@
+@import './variable.scss';
+@import './buttons.scss';
+
+.commentSection{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 16px;
+
+  @media (min-width: $tablet) {
+    margin: 0 24px;
+  }
+  @media (min-width: $desktop) {
+    margin: 0;
+  }
+
+  
+  .subheader {
+    align-self: flex-start;
+    margin: 0;
+  }
+
+  .form {
+    display: flex;
+    width: 100%;
+    margin: 32px 0 24px 0;
+
+    @media (min-width: $tablet) {
+      margin-bottom: 24px;
+    }
+    
+    &__image {
+      padding-top: 20px;
+
+      @media (min-width: $tablet) {
+        padding-top: 23px;
+      }
+      @media (min-width: $desktop) {
+        padding-top: 53px;
+      }
+      
+      img {
+        width: 48px;
+        height: 48px;
+        object-fit: cover;
+        border-radius: 50%;
+        margin-right: 16px;
+      }
+    }
+  
+    p {
+      color: $silver;
+      margin: 0 0 2px 0;
+  
+      @media (min-width: $desktop) {
+        margin-bottom: 8px;
+        margin-top: 24px;
+      }
+    }
+
+    &__input {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      justify-items: center;
+
+      :focus{
+        border: 2px solid $brainflix-blue;
+      }
+      
+      &--submit{
+        @media (min-width: $tablet) {
+          display: flex;
+          align-content: center;
+        }
+
+        textarea {
+          @include commentBox();
+          padding: 10px;
+          height: 30vw;
+  
+          @media (min-width: $tablet) {
+            height: 48px;
+           }
+        }
+        .button {
+          margin-top: 16px;
+          @include button();
+          width: 100%;
+          height: 50px;
+  
+          @media (min-width: $tablet) {
+            width: 160px;
+            margin: 0 40px 0 16px;
+          }
+          @media (min-width: $desktop) {
+           
+          }
+        }    
+      }
+    }
+  }
+
+  .targetArea{
+    border-bottom: solid 1px $mercury;
+
+    .target {
+      border-top: solid 1px $mercury;
+      display: flex; 
+      padding: 24px 0;
+
+      @media (min-width: $tablet){
+        padding-right: 40px;
+      }
+
+      &__img {
+        width: 40px;
+        height: 40px;
+        object-fit: cover;
+        border-radius: 50%;
+        margin-right: 14px;
+      }
+
+      &__div {
+        padding-top: 5px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+
+        @media (min-width: $tablet) {
+          justify-content: flex-start;
+        }
+  
+        &--name {
+          margin: 0;
+
+          @media (min-width: $tablet) {
+            margin-right: 10px;
+          }
+        }
+  
+        &--date {
+          margin: 0;
+          color: $silver;
+        }
+  
+        &--comment {
+          width: 100%;
+          margin: 16px 0 0 0;
+
+          @media (min-width: $tablet) {
+            margin-top: 5px;
+          }
+        }
+      }
+    }
+  }
+}

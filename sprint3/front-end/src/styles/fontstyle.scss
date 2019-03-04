@@ -1,0 +1,63 @@
+
+* {
+  font-family: 'AvenirNextRegular';
+}
+
+@mixin font($size, $height) {
+  font-size: $size;
+  line-height: $height;
+}
+
+h1 {
+  font-family: 'AvenirNextBold';
+  @include font(24px, 32px);
+
+  @media (min-width: $tablet) {
+    @include font(36px, 44px);
+  }
+}
+
+h2 {
+  font-family: 'AvenirNextDemi';
+  @include font(14px, 22px);
+
+  @media (min-width: $tablet) {
+    @include font(24px, 32px);
+    font-family: 'AvenirNextBold';
+  }
+}
+
+h3 {
+  @extend h2;
+  @media (min-width: $tablet) {
+    @include font(16px, 24px);
+    font-family: 'AvenirNextDemi';
+  }
+}
+
+.subheader {
+  @extend h2;
+  font-family: 'AvenirNextDemi';
+
+  @media (min-width: $tablet) {
+    @include font(16px, 24px);
+  }
+}
+
+p {
+  @include font(13px, 18px);
+
+  @media (min-width: $tablet) {
+    @include font(14px, 22px);
+  }
+}
+
+h4 {
+  @extend p;
+  font-family: 'AvenirNextDemi';
+}
+
+h5 {
+  @include font(12px, 20px);
+  font-family: 'AvenirNextDemi';
+}
