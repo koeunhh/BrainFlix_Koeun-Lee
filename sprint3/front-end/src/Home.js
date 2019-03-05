@@ -56,19 +56,6 @@ export default class Home extends Component{
     this.props.history.push(`/videos/${id}`);
   }
 
-  uploadVideo = (event) => {
-    event.preventDefault();
-    axios.post('http://localhost:8080/videos', 
-      { title: event.target.title.value, 
-        description: event.target.description.value
-      })
-      .then(res => {
-        this.setState({
-          videoListData: [...this.state.videoListData,]
-        })
-      })
-  }
-
   playPause = () => {
     var vid = document.getElementById("myVideo"); 
     if(this.state.isPlaying){
@@ -87,18 +74,6 @@ export default class Home extends Component{
 
   fullscreen = () => {
     var vid = document.getElementById("myVideo"); 
-    // if(this.state.fullscreen){
-    //   vid.requestFullscreen();
-    //   this.setState({
-    //     fullscreen: false
-    //   })
-    // }
-    // else{
-    //   document.exitFullscreen();
-    //   this.setState({
-    //     fullscreen: true
-    //   })
-    // }
     vid.requestFullscreen();
   }
 

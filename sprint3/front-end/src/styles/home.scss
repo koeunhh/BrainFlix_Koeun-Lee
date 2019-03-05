@@ -199,7 +199,8 @@ body {
         padding-top: 24px;
         margin: 0;
         border-top: 1px solid $mercury;
-
+        width: 100%;
+      
         @media (min-width: $tablet){
           padding-top: 40px;
         }

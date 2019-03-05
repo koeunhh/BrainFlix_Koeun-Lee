@@ -23,7 +23,7 @@ router.post('/', (req, res) => {
     id: uniqid(),
     title: req.body.title,
     channel: 'Brainstation',
-    image: './assets/Images/upload-video-preview.jpg',
+    image: '/assets/Images/upload-video-preview.jpg',
     description: req.body.description,
     views: '0',
     likes: '0',

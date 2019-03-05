@@ -9,7 +9,7 @@ export default class Upload extends Component{
         <Nav />
         <div className='upload'>
           <h1>Upload Video</h1>
-          <form>
+          <form onSubmit={this.props.uploadVideo}>
             <div className='form-main'>
               <div className='form-main-img'>
                 <h5 className='thumbnail'>VIDEO THUMBNAIL</h5>
