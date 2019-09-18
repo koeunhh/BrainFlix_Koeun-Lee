@@ -14,7 +14,7 @@ class App extends Component {
 
   uploadVideo = (event) => {
     event.preventDefault();
-    axios.post('http://localhost:8080/videos', 
+    axios.post('http://brainflix-koeun.herokuapp.com/videos', 
       { title: event.target.title.value,
         description: event.target.description.value
       })

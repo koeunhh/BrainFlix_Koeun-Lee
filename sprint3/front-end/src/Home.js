@@ -21,7 +21,7 @@ export default class Home extends Component{
   }
 
   componentDidMount(){
-    axios.get('http://localhost:8080/videos').then(response => {
+    axios.get('http://brainflix-koeun.herokuapp.com/videos').then(response => {
       this.setState({
         videoListData: response.data
       });
@@ -29,7 +29,7 @@ export default class Home extends Component{
 
     const {id} = this.props.match.params;
 
-    axios.get(`http://localhost:8080/videos/${id}`).then(response => {
+    axios.get(`http://brainflix-koeun.herokuapp.com/videos/${id}`).then(response => {
       this.setState({
         mainData: response.data
       });
@@ -40,7 +40,7 @@ export default class Home extends Component{
     if(previous !== this.props){
       const {id} = this.props.match.params;
 
-      axios.get(`http://localhost:8080/videos/${id}`).then(response => {
+      axios.get(`http://brainflix-koeun.herokuapp.com/videos/${id}`).then(response => {
         this.setState({
           mainData: response.data
         });
