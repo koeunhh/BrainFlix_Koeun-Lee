@@ -1,5 +1,0 @@
-[build]
-
-  base = 'sprint3/front-end/'
-  publish = 'sprint3/front-end'
-  command = 'npm run build'
