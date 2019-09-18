@@ -13,6 +13,8 @@ app.use(cors({
 
 app.use('/videos', require('./routes/videos'));
 
-app.listen(8080, () => {
-  console.log('app running on http://localhost:8080');
+const PORT = process.env.PORT || 8080;
+
+app.listen(PORT, () => {
+  console.log('app running on port:' + PORT);
 })
